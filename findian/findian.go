@@ -12,8 +12,6 @@ func main() {
 
 	var e string
 
-	//_, err :=fmt.Scanf("%s", &e)
-
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan() // use `for scanner.Scan()` to keep reading
 	e = scanner.Text()
