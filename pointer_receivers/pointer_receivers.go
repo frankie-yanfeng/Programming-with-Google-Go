@@ -20,4 +20,6 @@ func main() {
 	m := Point{3, 4}
 
 	m.OffsetX(5)
+
+	fmt.Println(m.x)
 }
