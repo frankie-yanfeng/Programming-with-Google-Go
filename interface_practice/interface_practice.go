@@ -81,7 +81,7 @@ func main() {
 	nameType = make(map[string]string)
 
 	for {
-		fmt.Printf(">please enter the request -> name & infomation: ")
+		fmt.Printf("\n>please enter the request -> name & infomation: ")
 
 		scanner := bufio.NewScanner(os.Stdin)
 		scanner.Scan()
@@ -90,7 +90,7 @@ func main() {
 		//fmt.Printf("request is: %s\n", request)
 
 		if len(strings.Split(request, " ")) != 3 {
-			fmt.Println("Command input number is not equal to 3")
+			fmt.Println("Command input number is not equal to 3\n")
 			continue
 		}
 
@@ -107,7 +107,13 @@ func main() {
 			fmt.Printf("animalType: %s\n", animalType)
 
 			//adding name checking
-			nameType[name] = animalType
+			_, ok := nameType[name]
+			if ok == false {
+				nameType[name] = animalType
+				fmt.Println("Created it!")
+			} else {
+				fmt.Printf("Animal name %s is taken, please try another name\n", name)
+			}
 		case "query":
 
 			name := strings.Split(request, " ")[1]
