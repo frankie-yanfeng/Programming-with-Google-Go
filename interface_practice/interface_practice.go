@@ -90,7 +90,7 @@ func main() {
 		//fmt.Printf("request is: %s\n", request)
 
 		if len(strings.Split(request, " ")) != 3 {
-			fmt.Println("Command input number is not equal to 3\n")
+			fmt.Println("Command input number is not equal to 3")
 			continue
 		}
 
