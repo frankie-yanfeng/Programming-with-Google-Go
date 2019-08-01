@@ -4,12 +4,16 @@ import (
 	"fmt"
 )
 
-//foo - call by reference
-func foo(x [3]int) int {
-	return x[0]
+//foo - call by value
+func foo(x [3]int) {
+	x[0] = x[0] + 1
+
+	fmt.Println("modified array is: ", x)
 }
 
 func main() {
 	a := [3]int{1, 2, 3}
-	fmt.Print(foo(a))
+	foo(a)
+
+	fmt.Println("original array is: ", a)
 }
