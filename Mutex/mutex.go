@@ -6,12 +6,13 @@ import (
 )
 
 var i int
-var mut = &sync.Mutex{}
+
+//var mut = &sync.Mutex{}
 
 func inc(wg *sync.WaitGroup, m *sync.Mutex) {
-	mut.Lock()
+	m.Lock()
 	i = i + 1
-	mut.Unlock()
+	m.Unlock()
 	wg.Done()
 }
 
